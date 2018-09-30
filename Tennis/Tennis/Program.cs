@@ -18,21 +18,21 @@ namespace Tennis
             Console.CursorVisible = false;
             Console.Title = "TENNIS SCOREBOARD";
             Console.WindowHeight = 30;
-            Console.WindowWidth = 135;
+            Console.WindowWidth = 140;
             Console.SetWindowPosition(0, 0);
             Console.SetCursorPosition(10, 30);
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Clear();
-            Console.WriteLine(FiggleFonts.Doom.Render("         WELCOME TO TENNIS!"));
+            Console.WriteLine(FiggleFonts.Doom.Render("                  WELCOME TO TENNIS!"));
             Thread.Sleep(3000);
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
-            while (player[0]=="")
+            while (player[0]=="" || player[0].Length == 1)
             {
                 Console.SetCursorPosition(Console.WindowWidth/2-20, Console.WindowHeight/2);
                 Console.ForegroundColor = ConsoleColor.Red;                
-                Console.Write("Please Enter a name for Player1 : ");                
+                Console.Write("Please Enter a name for Player 1 : ");                
                 player[0] = Console.ReadLine().ToUpper();
                 Console.Clear();
                 if (player[0] == "")
@@ -40,11 +40,19 @@ namespace Tennis
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.SetCursorPosition(Console.WindowWidth / 2 - 20, Console.WindowHeight / 2);                    
-                    Console.WriteLine("You Must Enter a name for Player 1!!");
+                    Console.WriteLine("You Must Enter a name for Player 1 !!");
+                    continue;
+                }
+                if (player[0].Length==1)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.SetCursorPosition(Console.WindowWidth / 2 - 30, Console.WindowHeight / 2+5);
+                    Console.WriteLine("You Must enter atleast 2 character for the Player name !!");
                     continue;
                 }
             }
-            while (player[1]=="")
+            while (player[1]=="" || player[1].Length == 1)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.SetCursorPosition(Console.WindowWidth / 2 - 20, Console.WindowHeight / 2);                
@@ -57,6 +65,14 @@ namespace Tennis
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.SetCursorPosition(Console.WindowWidth / 2 - 20, Console.WindowHeight / 2);                    
                     Console.WriteLine("You Must Enter a name for Player 2!!");
+                    continue;
+                }
+                if (player[1].Length == 1)
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.SetCursorPosition(Console.WindowWidth / 2 - 30, Console.WindowHeight / 2 + 5);
+                    Console.WriteLine("You Must enter atleast 2 character for the Player name !!");
                     continue;
                 }
             }
@@ -78,7 +94,6 @@ namespace Tennis
                 Console.SetCursorPosition(Console.WindowWidth / 2 - 18, Console.WindowHeight / 2+1);
                 Console.WriteLine("         Press Any Key To Start!");
                 Console.ReadKey();
-
             }
             else
             {
@@ -88,8 +103,7 @@ namespace Tennis
                 Console.WriteLine($"{player[1]} Starts The Game!(Right ArrowKey)");
                 Console.SetCursorPosition(Console.WindowWidth / 2 - 18, Console.WindowHeight / 2+1);
                 Console.WriteLine("         Press Any Key To Start!");
-                Console.ReadKey();
-                
+                Console.ReadKey();                
             }
             bool match = false;
             int i = 0;
@@ -187,7 +201,7 @@ namespace Tennis
         static void PrintWinner(string player)
         {            
             Console.SetCursorPosition(0, 10);
-            Console.WriteLine(FiggleFonts.Small.Render($"{player} WINS THE GAME!"));
+            Console.WriteLine(FiggleFonts.Small.Render($"               {player} WINS THE GAME!"));
             string[] color = new string[] { "Green", "Yellow", "Red" };
             Console.ReadLine();
         }
@@ -251,10 +265,10 @@ namespace Tennis
                 }
 
             }
-            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------\n");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------\n");
             Console.WriteLine(FiggleFonts.Basic.Render($"| {player[0].Substring(0,2).ToUpper()} | {GameP1History[0]} | {GameP1History[1]} | {GameP1History[2]} | {GameP1History[3]} | {GameP1History[4]} | {SbPointP1} | {advantageP1}"));
             Console.WriteLine(FiggleFonts.Basic.Render($"| {player[1].Substring(0,2).ToUpper()} | {GameP2History[0]} | {GameP2History[1]} | {GameP2History[2]} | {GameP2History[3]} | {GameP2History[4]} | {SbPointP2} | {advantageP2}"));
-            Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------");
         }
     }
 }
