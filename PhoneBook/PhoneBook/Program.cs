@@ -109,25 +109,62 @@ namespace PhoneBook
                         }
                         break;
                     case "3":
-                        ShowPhoneBook();
-                        Console.WriteLine("Which contact do you want to edit?");
-                        int userInputEdit = int.Parse(Console.ReadLine());
-                        ShowPhoneBook(userInputEdit);
-                        Console.WriteLine("Enter phone number, name and family name to edit.PUT SPACE BETWEEN THEME");
-                        string[] userInputContactEdit = Console.ReadLine().Split(' ');
-                        Console.WriteLine($"{userInputEdit}- Phone: {userInputContactEdit[0]}\tName: {userInputContactEdit[1]}\tFamily: {userInputContactEdit[2]}");
-                        Console.WriteLine("Are you sure You want to apply Edit?Y/N");
-                        char okTpApplyEdit = Convert.ToChar(Console.ReadLine().ToUpper());
-                        if (okTpApplyEdit=='Y')
+                        char editAnother = 'Y';
+                        while (editAnother=='Y')
                         {
-                            numbers[userInputEdit] = userInputContactEdit[0];
-                            names[userInputEdit] = userInputContactEdit[1];
-                            familyNames[userInputEdit] = userInputContactEdit[2];
-                        }
-                        else
-                        {
-                            Console.WriteLine("Contact edit discarded by user");
-                            Thread.Sleep(1500);
+                            if (numbers.Length == 0)
+                            {
+                                Console.Beep(4000, 500);
+                                Console.WriteLine("No contact to edit!");
+                                Thread.Sleep(2000);
+                                break;
+                            }
+
+                            ShowPhoneBook();
+                            Console.WriteLine("Which contact do you want to edit?");
+                            int userInputEdit = int.Parse(Console.ReadLine());
+                            if (userInputEdit>numbers.Length || userInputEdit<1)
+                            {
+                                Console.Beep(4000, 500);
+                                Console.WriteLine("Please enter the contact row number correctly!");
+                                Thread.Sleep(2000);
+                                continue;
+                            }
+                            ShowPhoneBook(userInputEdit);
+                            Console.WriteLine("Enter phone number, name and family name to edit.PUT SPACE BETWEEN THEME");
+                            try
+                            {
+                                string[] userInputContactEdit = Console.ReadLine().Split(' ');
+                                Console.WriteLine($"{userInputEdit}- Phone: {userInputContactEdit[0]}\tName: {userInputContactEdit[1]}\tFamily: {userInputContactEdit[2]}");
+                                Console.WriteLine("Are you sure You want to apply Edit?Y/N");
+                                char okTpApplyEdit = Convert.ToChar(Console.ReadLine().ToUpper());
+                                if (okTpApplyEdit == 'Y')
+                                {
+                                    numbers[userInputEdit-1] = userInputContactEdit[0];
+                                    names[userInputEdit-1] = userInputContactEdit[1];
+                                    familyNames[userInputEdit-1] = userInputContactEdit[2];
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Contact edit discarded by user");
+                                    Thread.Sleep(1500);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                
+                                Console.Beep(4000, 500);
+                                for (int i = 0; i < 4; i++)
+                                {
+                                    Console.Clear();
+                                    Thread.Sleep(500);
+                                    Console.WriteLine("Please put a space between each entry.");
+                                    Thread.Sleep(800);                                    
+                                }
+                                continue;
+                            }
+                            Console.WriteLine("Do you want to edit another contact?Y/N");
+                            editAnother = Convert.ToChar(Console.ReadLine().ToUpper());
                         }
                         break;
                     case "4":
@@ -150,6 +187,7 @@ namespace PhoneBook
         }
         static void ShowPhoneBook(int i)
         {
+            Console.Clear();
             Console.WriteLine($"{i}- Phone: {numbers[i-1]}\tName: {names[i-1]}\tFamily: {familyNames[i-1]}");
         }
         static void Add(ref string[] array,string input)
