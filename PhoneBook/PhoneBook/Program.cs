@@ -172,6 +172,7 @@ namespace PhoneBook
                         break;
                     default:
                         Console.WriteLine("Please Enter a Number Between 1 to 4");
+                        Thread.Sleep(2000);
                         break;
                 }
             }
