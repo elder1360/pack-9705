@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IComparableDemo", "..\..\CLASS CODES\Pack-9705\03.CSharp\Session22-970716\IComparableDemo\IComparableDemo.csproj", "{638CAA4F-8D47-4B12-91D4-F0074C5D3D49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IComparableDemo", "IComparableDemo\IComparableDemo.csproj", "{763C6BCF-14FF-4FAB-AB5D-FCD3C02E488D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{638CAA4F-8D47-4B12-91D4-F0074C5D3D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{638CAA4F-8D47-4B12-91D4-F0074C5D3D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{638CAA4F-8D47-4B12-91D4-F0074C5D3D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{638CAA4F-8D47-4B12-91D4-F0074C5D3D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763C6BCF-14FF-4FAB-AB5D-FCD3C02E488D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763C6BCF-14FF-4FAB-AB5D-FCD3C02E488D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763C6BCF-14FF-4FAB-AB5D-FCD3C02E488D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763C6BCF-14FF-4FAB-AB5D-FCD3C02E488D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {53C44A2D-D385-42BA-BA49-B26E575E7C3D}
+		SolutionGuid = {5E5B1B77-B762-4697-82DE-11B7678305D5}
 	EndGlobalSection
 EndGlobal
