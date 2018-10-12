@@ -11,10 +11,10 @@ namespace FileExplorer
     class Program
     {
         static DriveInfo[] drives = DriveInfo.GetDrives();
-        static int closeExplorer = 1;        
+        static int runExplorer = 1;        
         static void Main(string[] args)
         {            
-            while (closeExplorer==1)
+            while (runExplorer==1)
             {
                 PrintDrives();
                 ExplorDrives();
@@ -81,80 +81,117 @@ namespace FileExplorer
         }
         static void ExplorDrives()
         {
-            Console.Write("Please enter a drive number:(0 to Exit)");
+            Console.Write("Please enter a drive number:(-1 to Exit)");
             int choosedDrive;
             bool choosedDriveCorrect = int.TryParse(Console.ReadLine(), out choosedDrive);
-            if (choosedDrive==0)
+            if (choosedDriveCorrect)
             {
-                closeExplorer = 0;                
-            }
-            else if(choosedDrive>0&&choosedDrive<=drives.Length)
-            {
-                if (drives[choosedDrive-1].IsReady)
+                if (choosedDrive == -1)
                 {
-                    StringBuilder path = new StringBuilder(drives[choosedDrive - 1].Name);
-                    while (true)
+                    runExplorer = 0;
+                }
+                else if (choosedDrive > 0 && choosedDrive <= drives.Length)
+                {
+                    if (drives[choosedDrive - 1].IsReady)
                     {
-                        Console.Clear();                 
-                        DirectoryInfo directory = new DirectoryInfo(path.ToString());
-                        DirectoryInfo[] directories = directory.GetDirectories();
-                        FileInfo[] files = directory.GetFiles();
-                        for (int i = 0; i < directories.Length; i++)
+                        StringBuilder path = new StringBuilder(drives[choosedDrive - 1].Name);
+                        while (true)
                         {
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.WriteLine($"{i + 1}-{directories[i]}");                            
-                        }
-                        for (int j = 0; j < files.Length; j++)
-                        {
-                            Console.ForegroundColor = ConsoleColor.White;
-                            Console.Write($"{j + 1 + directories.Length}-{files[j]}");
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("[File]");
-                            Console.ForegroundColor = ConsoleColor.White;
-                        }
-                        if (files.Length==0&&directories.Length==0)
-                        {
-                            Console.WriteLine("Directory is Empty.Enter 0 to go back.");
-                        }
-                        else
-                        {
-                            Console.WriteLine(@"select desired directory number to open or file number to execute.""Enter 0 to go back""");
-                        }
-                        int choosedDirectory;
-                        bool choosedDirectoryCorrect = int.TryParse(Console.ReadLine(), out choosedDirectory);
-                        if (choosedDirectory > 0&&choosedDirectory<=directories.Length)
-                        {
-                            directory = directories[choosedDirectory - 1];
-                            path.Append("\\" + directory.ToString());
-                        }
-                        else if(choosedDirectory>directories.Length)
-                        {
-                            Process.Start(path.ToString() + "\\" + files[choosedDirectory - 1 - directories.Length]);
-                        }
-                        else
-                        {
-                            path.Clear();
+                            Console.Clear();
+                            DirectoryInfo directory = new DirectoryInfo(path.ToString());
                             try
                             {
-                                path.Append(directory.Parent.FullName.ToString());
+                                DirectoryInfo[] directories = directory.GetDirectories();
+                                FileInfo[] files = directory.GetFiles();
+                                for (int i = 0; i < directories.Length; i++)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine($"{i + 1}-{directories[i]}");
+                                }
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Current Path:> " + path.ToString() + '\n');
+                                Console.ForegroundColor = ConsoleColor.White;
+
+                                for (int j = 0; j < files.Length; j++)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.Write($"{j + 1 + directories.Length}-");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.Write($"{files[j]} ");
+
+                                }
+                                if (files.Length == 0 && directories.Length == 0)
+                                {
+                                    Console.WriteLine("Directory is Empty.Enter 0 to go back.");
+                                }
+                                else
+                                {
+                                    if (files.Length == 0)
+                                    {
+                                        Console.WriteLine("Enter Directory Number to Open:\n\"Enter 0 to Go Back\"");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\n\nEnter Directory OR File Number to Open OR Execute:\n\"Enter 0 to Go Back\"");
+                                    }
+
+                                }
+                                int choosedDirectory;
+                                bool choosedDirectoryCorrect = int.TryParse(Console.ReadLine(), out choosedDirectory);
+                                if (choosedDirectory > 0 && choosedDirectory <= directories.Length)
+                                {
+                                    directory = directories[choosedDirectory - 1];
+                                    path.Append("\\" + directory.ToString());
+                                }
+                                else if (choosedDirectory > directories.Length)
+                                {
+                                    using (Process.Start(path.ToString() + "\\" + files[choosedDirectory - 1 - directories.Length]))
+                                    {
+
+                                    }
+                                }
+                                else
+                                {
+                                    path.Clear();
+                                    try
+                                    {
+                                        path.Append(directory.Parent.FullName.ToString());
+                                    }
+                                    catch (Exception)
+                                    {
+                                        break;
+                                    }
+                                }
                             }
-                            catch (Exception)
+
+                            catch (UnauthorizedAccessException ex)
                             {
-                                break;
+                                Console.WriteLine("Access Denied! " + ex.Message);
+                                Thread.Sleep(2000);
+                                path.Clear();
+                                path.Append(directory.Parent.FullName.ToString());
+                                continue;
                             }
                         }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Drive is not ready.");
+                        Thread.Sleep(2000);
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Drive is not ready.");
+                    Console.WriteLine("Please enter correct drive number.");
                     Thread.Sleep(2000);
+                    return;
                 }
             }
             else
             {
-                Console.WriteLine("Please enter correct drive number.");
+                Console.WriteLine("Enter Drive Number Correctly");
                 Thread.Sleep(2000);
+                return;
             }
         }        
     }
