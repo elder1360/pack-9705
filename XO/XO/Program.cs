@@ -217,14 +217,14 @@ namespace XO
                                 case '1':
                                     if (occupied[i,j]==""| occupied[i, j] ==null)
                                     {
-                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "X", color: ConsoleColor.Yellow);
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "X", color: ConsoleColor.Red);
                                         occupied[i, j] = "x";
                                     }
                                     break;
                                 case '2':
                                     if (occupied[i, j] == "" | occupied[i, j] == null)
                                     {
-                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "O", color: ConsoleColor.Yellow);
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "O", color: ConsoleColor.Red);
                                         occupied[i, j] = "o";
                                     }
                                     break;
