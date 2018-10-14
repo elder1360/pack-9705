@@ -171,9 +171,7 @@ namespace XO
                             case "X":
                                 if (j == y + (l / 2)-2 && i == x + ((l + 5) / 2)-5)
                                 {
-                                  string path=Path.GetFullPath("X.txt");
-                                   string path2=Path.GetPathRoot(path);
-                                  using (StreamReader Ascii = new StreamReader(path2))
+                                  using (StreamReader Ascii = new StreamReader("X.txt"))
                                   {
                                       while (Ascii.Peek()>-1)
                                       {
@@ -186,7 +184,7 @@ namespace XO
                             case "O":
                                 if (j == y + (l / 2)-2 && i == x + ((l + 5) / 2)-5)
                                 {
-                                    using (StreamReader Ascii = new StreamReader(@"O.txt"))
+                                    using (StreamReader Ascii = new StreamReader("O.txt"))
                                     {
                                         while (Ascii.Peek() > -1)
                                         {
