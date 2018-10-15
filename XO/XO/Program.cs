@@ -18,40 +18,40 @@ namespace XO
                 bool choosePlayer = true;
                 GameBoard gameBoard = new GameBoard();
                 int ax = 0, ay = 0;
-                gameBoard.DrawGameBoard(ax, ay);
+                ConsoleKey key = ConsoleKey.DownArrow;
+                gameBoard.DrawGameBoard(ax, ay,ref key);
                 while (!draw(gameBoard))
-                {
-                    ConsoleKey key = Console.ReadKey().Key;
+                {                    
                     switch (key)
                     {
                         case ConsoleKey.UpArrow:
                             if (ay > 0 && ay < 3)
                             {
-                                gameBoard.DrawGameBoard(ax, --ay);
+                                gameBoard.DrawGameBoard(ax, --ay,ref key);
                             }
                             continue;
                         case ConsoleKey.DownArrow:
                             if (ay >= 0 && ay < 2)
                             {
-                                gameBoard.DrawGameBoard(ax, ++ay);
+                                gameBoard.DrawGameBoard(ax, ++ay,ref key);
                             }
                             continue;
                         case ConsoleKey.LeftArrow:
                             if (ax > 0 && ax < 3)
                             {
-                                gameBoard.DrawGameBoard(--ax, ay);
+                                gameBoard.DrawGameBoard(--ax, ay,ref key);
                             }
                             continue;
                         case ConsoleKey.RightArrow:
                             if (ax >= 0 && ax < 2)
                             {
-                                gameBoard.DrawGameBoard(++ax, ay);
+                                gameBoard.DrawGameBoard(++ax, ay,ref key);
                             }
                             continue;
                         case ConsoleKey.Enter:
                             if (choosePlayer)
                             {
-                                gameBoard.DrawGameBoard(ax, ay, '1');
+                                gameBoard.DrawGameBoard(ax, ay, ref key, '1');
                                 if (Winner(gameBoard, "x"))
                                 {
                                     break;
@@ -61,7 +61,7 @@ namespace XO
                             }
                             else
                             {
-                                gameBoard.DrawGameBoard(ax, ay, '2');
+                                gameBoard.DrawGameBoard(ax, ay, ref key, '2');
                                 if (Winner(gameBoard, "o"))
                                 {
                                     break;
@@ -69,9 +69,12 @@ namespace XO
                                 choosePlayer = !choosePlayer;
                                 continue;
                             }
+                        default:
+                            key = Console.ReadKey().Key;
+                            continue;
                     }
                     Console.Clear();
-                    Console.WriteLine(FiggleFonts.Doom.Render($"                    {(choosePlayer?"X":"Y")}  WON The Game!!"));
+                    Console.WriteLine(FiggleFonts.Doom.Render($"                    {(choosePlayer?"X":"O")}  WON The Game!!"));
                     Thread.Sleep(3000);
                     break;
                 }
@@ -198,7 +201,7 @@ namespace XO
                     }
                 }
             }
-            internal void DrawGameBoard(int ax, int ay,char player='0')
+            internal void DrawGameBoard(int ax, int ay, ref ConsoleKey key, char player='0')
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -212,21 +215,38 @@ namespace XO
                                     if (occupied[i, j] == "" | occupied[i, j] == null)
                                     {
                                         DrawSquare(11 * i + 40, 6 * j + 5, 5, color: ConsoleColor.DarkBlue);
+                                        key = Console.ReadKey().Key;
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, color: ConsoleColor.Cyan);
                                     }
+                                    else if (occupied[i, j] == "x")
+                                    {
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "X", color: ConsoleColor.Magenta);
+                                        key = Console.ReadKey().Key;
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "X", color: ConsoleColor.Red);
+                                    }
+                                    else
+                                    {
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "O", color: ConsoleColor.Magenta);
+                                        key = Console.ReadKey().Key;
+                                        DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "O", color: ConsoleColor.Red);
+                                    }                                    
                                     break;
                                 case '1':
                                     if (occupied[i,j]==""| occupied[i, j] ==null)
                                     {
                                         DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "X", color: ConsoleColor.Red);
                                         occupied[i, j] = "x";
+                                        key = Console.ReadKey().Key;
                                     }
+                                    
                                     break;
                                 case '2':
                                     if (occupied[i, j] == "" | occupied[i, j] == null)
                                     {
                                         DrawSquare(11 * i + 40, 6 * j + 5, 5, s: "O", color: ConsoleColor.Red);
                                         occupied[i, j] = "o";
-                                    }
+                                        key = Console.ReadKey().Key;
+                                    }                                   
                                     break;
                             }
                         }
@@ -235,8 +255,9 @@ namespace XO
                             if (occupied[i, j] == "" | occupied[i, j] == null)
                             {
                                 DrawSquare(11 * i + 40, 6 * j + 5, 5);
-                            }                                
-                        }
+                                
+                            }                            
+                        }                        
                     }
                 }
             }
