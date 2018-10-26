@@ -1,0 +1,36 @@
+﻿@import url(/Content/bootstrap-rtl.css);
+@import url(/Content/bootstrap-theme-rtl.css);
+@import url(/fonts/shabnam-font-v2.4.0/ShabnamFont.css);
+
+body {
+    direction:rtl;
+    font-family:shabnam;
+}
+header div{
+    background-color:green;
+}
+header
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    /*margin-top: 0px;*/
+    margin-bottom: 23px;
+}
+
+header h1 {
+    text-shadow: -3px -2px 2px black;
+    color: aliceblue
+}
+.lead {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 4;
+}
+.navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+    margin-right:15px;
+}

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta lang="fa"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="/Form.css" rel="stylesheet" />
+</head>
+<body onload="CorrectRadifs()">    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">سیستم جامع مدیریت ارجاعات</a>
+            </div>
+            <ul class="nav navbar-nav navbar-collapse">
+                <li><a href="#" class="glyphicon glyphicon-home"></a></li>
+                <li><a href="#">مدیریت ارجاعات</a></li>
+                <li><a href="#">مدیریت وظائف</a></li>
+                <li><a href="#">پیگیری</a></li>
+                <li class="active"><a href="#">فرم وظائف</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown navbar-inverse">                    
+                  <a href="#" class="dropdown-menu" data-toggle="dropdown" style="background-color:rgb(34,34,34);">محمدعلی معدلی<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">پروفایل شخصی</a></li>
+                         <li><a href="#">ناحیه کاربری</a></li>                
+                     </ul>
+                </li>
+                <li>
+                  <a href="#" class="glyphicon glyphicon-briefcase"></a>                    
+                </li>
+            </ul> 
+        </div>
+    </nav>
+    <main class="container">
+        <table class="table table-bordered table-hover table-responsive table-striped" id="vazayefTable">
+            <tr>
+                <th class="table-condensed">ردیف</th>
+                <th>شرح وظیفه</th>
+                <th>تاریخ اتمام</th>
+                <th>وضعیت</th>
+            </tr>
+            <tr class="form-group">
+                <td class="text-center lead"></td>
+                <td><input class="form-control" name="Vazife" /></td>
+                <td><input class="form-control" type="date" name="Date" /></td>
+                <td class="input-group input-group-btn" onclick="CompletedTask(this.id)">
+                    <button class="btn btn-default glyphicon glyphicon-ok-sign"></button>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-default" onclick="AddList()">+</button>
+        <button class="btn btn-default" onclick="SaveList()">ذخیره</button>
+
+    </main>
+
+    <script> 
+        let tableRowsItem = document.getElementsByTagName("tr");        
+
+        function CorrectRadifs() {
+            let listRadif = 1;
+            for (var i = 0; i < tableRowsItem.length - 1; i++) {
+                let radifId = "radif" + listRadif;
+                tableRowsItem[i + 1].firstElementChild.setAttribute("id", radifId);
+                let completeButtonId = "button" + listRadif;
+                tableRowsItem[i + 1].lastElementChild.setAttribute("id", completeButtonId);
+                let radifText = (listRadif).toString().concat("-");
+                tableRowsItem[i + 1].firstElementChild.innerHTML = radifText;
+                let rowGroupId = "group" + listRadif++;
+                tableRowsItem[i + 1].setAttribute("id", rowGroupId);
+            }
+        }
+        
+        function AddList() {            
+            document.getElementById("vazayefTable").innerHTML += '<tr class="form-group list-group-item-success"> \
+                    <td class="text-center lead " >۱-</td > \
+                    <td><input class="form-control" name="Vazife" /></td> \
+                    <td><input class="form-control" type="date" name="Date" /></td >\
+                    <td class="input-group input-group-btn "onclick="CompletedTask(this.id)"> <button class="btn btn-default glyphicon glyphicon-ok-sign"></button></td>\
+                    </tr >';
+            CorrectRadifs();
+        }
+
+        function CompletedTask(id) {
+            document.getElementById(id).firstElementChild.setAttribute("class", "btn btn-success glyphicon glyphicon-ok-sign");
+            let groupId = id.replace("button", "group");
+            document.getElementById(groupId).setAttribute("class", "form-group success");           
+        }
+
+        function SaveList() {
+            let taskList = [];
+            let task = {task:"",dueDate:"",done:""}
+            for (var i = 0; i < tableRowsItem.length; i++) {
+
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>
