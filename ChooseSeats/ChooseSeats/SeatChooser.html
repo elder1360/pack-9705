@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta lang="fa" />
+    <title>انتخاب صندلی</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="main.css" rel="stylesheet" />
+</head>
+<body>
+    <main class="container">
+
+        <div class="row">
+
+            <div class="col-md-4 form-group-sm">
+                <label for="name">نام:</label>
+                    <input type="text" placeholder="نام" id="name" class="form-control"/>
+                <label for="familyname">نام خانوادگی:</label>
+                    <input type="text" placeholder="نام خانوادگی:" id="familyname" class="form-control" />
+                <input type="submit" class="form-control btn btn-default" value="ذخیره" id="submit" />
+            </div>
+
+            <div class="col-md-8">
+                    <select id="salonlist" class="form-control">
+                        <option>لطفا سالن موردنظر را انتخاب کنید</option>
+                    </select>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

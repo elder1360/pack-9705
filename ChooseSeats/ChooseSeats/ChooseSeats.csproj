@@ -1,0 +1,223 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26DD4031-9B42-4F87-8C71-4CF9C0BACB40}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChooseSeats</RootNamespace>
+    <AssemblyName>ChooseSeats</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-rtl.css" />
+    <Content Include="Content\bootstrap-rtl.min.css" />
+    <Content Include="Content\bootstrap-theme-rtl.css" />
+    <Content Include="Content\bootstrap-theme-rtl.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\irfonts.css" />
+    <Content Include="dataget.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\irbadrbold.svg" />
+    <Content Include="fonts\irbadrregular.svg" />
+    <Content Include="fonts\irlotusbold.svg" />
+    <Content Include="fonts\irlotusregular.svg" />
+    <Content Include="fonts\irmitrabold.svg" />
+    <Content Include="fonts\irmitraregular.svg" />
+    <Content Include="fonts\irnazaninbold.svg" />
+    <Content Include="fonts\irnazaninregular.svg" />
+    <Content Include="fonts\irterafikbold.svg" />
+    <Content Include="fonts\irterafikregular.svg" />
+    <Content Include="fonts\irtitrregular.svg" />
+    <Content Include="fonts\iryekanbold.svg" />
+    <Content Include="fonts\iryekanregular.svg" />
+    <Content Include="main.css" />
+    <Content Include="main.js" />
+    <Content Include="Scripts\bootstrap-rtl.js" />
+    <Content Include="Scripts\bootstrap-rtl.min.js" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\iryekanregular.woff2" />
+    <Content Include="fonts\iryekanregular.woff" />
+    <Content Include="fonts\iryekanregular.ttf" />
+    <Content Include="fonts\iryekanregular.eot" />
+    <Content Include="fonts\iryekanbold.woff2" />
+    <Content Include="fonts\iryekanbold.woff" />
+    <Content Include="fonts\iryekanbold.ttf" />
+    <Content Include="fonts\iryekanbold.eot" />
+    <Content Include="fonts\irtitrregular.woff2" />
+    <Content Include="fonts\irtitrregular.woff" />
+    <Content Include="fonts\irtitrregular.ttf" />
+    <Content Include="fonts\irtitrregular.eot" />
+    <Content Include="fonts\irterafikregular.woff2" />
+    <Content Include="fonts\irterafikregular.woff" />
+    <Content Include="fonts\irterafikregular.ttf" />
+    <Content Include="fonts\irterafikregular.eot" />
+    <Content Include="fonts\irterafikbold.woff2" />
+    <Content Include="fonts\irterafikbold.woff" />
+    <Content Include="fonts\irterafikbold.ttf" />
+    <Content Include="fonts\irterafikbold.eot" />
+    <Content Include="fonts\irnazaninregular.woff2" />
+    <Content Include="fonts\irnazaninregular.woff" />
+    <Content Include="fonts\irnazaninregular.ttf" />
+    <Content Include="fonts\irnazaninregular.eot" />
+    <Content Include="fonts\irnazaninbold.woff2" />
+    <Content Include="fonts\irnazaninbold.woff" />
+    <Content Include="fonts\irnazaninbold.ttf" />
+    <Content Include="fonts\irnazaninbold.eot" />
+    <Content Include="fonts\irmitraregular.woff2" />
+    <Content Include="fonts\irmitraregular.woff" />
+    <Content Include="fonts\irmitraregular.ttf" />
+    <Content Include="fonts\irmitraregular.eot" />
+    <Content Include="fonts\irmitrabold.woff2" />
+    <Content Include="fonts\irmitrabold.woff" />
+    <Content Include="fonts\irmitrabold.ttf" />
+    <Content Include="fonts\irmitrabold.eot" />
+    <Content Include="fonts\irlotusregular.woff2" />
+    <Content Include="fonts\irlotusregular.woff" />
+    <Content Include="fonts\irlotusregular.ttf" />
+    <Content Include="fonts\irlotusregular.eot" />
+    <Content Include="fonts\irlotusbold.woff2" />
+    <Content Include="fonts\irlotusbold.woff" />
+    <Content Include="fonts\irlotusbold.ttf" />
+    <Content Include="fonts\irlotusbold.eot" />
+    <Content Include="fonts\irbadrregular.woff2" />
+    <Content Include="fonts\irbadrregular.woff" />
+    <Content Include="fonts\irbadrregular.ttf" />
+    <Content Include="fonts\irbadrregular.eot" />
+    <Content Include="fonts\irbadrbold.woff2" />
+    <Content Include="fonts\irbadrbold.woff" />
+    <Content Include="fonts\irbadrbold.ttf" />
+    <Content Include="fonts\irbadrbold.eot" />
+    <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.4.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.js" />
+    <Content Include="SeatChooser.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dataget.aspx.cs">
+      <DependentUpon>dataget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataget.aspx.designer.cs">
+      <DependentUpon>dataget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dataget\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57256</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57256/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

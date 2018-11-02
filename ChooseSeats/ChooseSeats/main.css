@@ -1,0 +1,18 @@
+﻿@import url(Content/bootstrap-rtl.css);
+@import url(Content/bootstrap-theme-rtl.css);
+@import url(Content/font-awesome.css);
+@import url(Content/irfonts.css);
+
+body {
+    direction:rtl;
+    font-family:IRMitra;
+}
+main{
+    margin-top:5px;
+}
+wrapper{
+    margin:1px;
+}
+button{
+    margin:1px;
+}

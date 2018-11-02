@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'IRBadr';
+    src: url('../fonts/irbadrregular.eot');
+    src: url('../fonts/irbadrregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irbadrregular.woff2') format('woff2'),
+         url('../fonts/irbadrregular.woff') format('woff'),
+         url('../fonts/irbadrregular.ttf') format('truetype'),
+         url('../fonts/irbadrregular.svg#irbadrregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRBadr';
+    src: url('../fonts/irbadrbold.eot');
+    src: url('../fonts/irbadrbold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irbadrbold.woff2') format('woff2'),
+         url('../fonts/irbadrbold.woff') format('woff'),
+         url('../fonts/irbadrbold.ttf') format('truetype'),
+         url('../fonts/irbadrbold.svg#irbadrbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRLotus';
+    src: url('../fonts/irlotusregular.eot');
+    src: url('../fonts/irlotusregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irlotusregular.woff2') format('woff2'),
+         url('../fonts/irlotusregular.woff') format('woff'),
+         url('../fonts/irlotusregular.ttf') format('truetype'),
+         url('../fonts/irlotusregular.svg#irlotusregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRLotus';
+    src: url('../fonts/irlotusbold.eot');
+    src: url('../fonts/irlotusbold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irlotusbold.woff2') format('woff2'),
+         url('../fonts/irlotusbold.woff') format('woff'),
+         url('../fonts/irlotusbold.ttf') format('truetype'),
+         url('../fonts/irlotusbold.svg#irlotusbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRMitra';
+    src: url('../fonts/irmitraregular.eot');
+    src: url('../fonts/irmitraregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irmitraregular.woff2') format('woff2'),
+         url('../fonts/irmitraregular.woff') format('woff'),
+         url('../fonts/irmitraregular.ttf') format('truetype'),
+         url('../fonts/irmitraregular.svg#irmitraregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRMitra';
+    src: url('../fonts/irmitrabold.eot');
+    src: url('../fonts/irmitrabold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irmitrabold.woff2') format('woff2'),
+         url('../fonts/irmitrabold.woff') format('woff'),
+         url('../fonts/irmitrabold.ttf') format('truetype'),
+         url('../fonts/irmitrabold.svg#irmitrabold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'IRTerafik';
+    src: url('../fonts/irterafikregular.eot');
+    src: url('../fonts/irterafikregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irterafikregular.woff2') format('woff2'),
+         url('../fonts/irterafikregular.woff') format('woff'),
+         url('../fonts/irterafikregular.ttf') format('truetype'),
+         url('../fonts/irterafikregular.svg#irterafikregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRTerafik';
+    src: url('../fonts/irterafikbold.eot');
+    src: url('../fonts/irterafikbold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irterafikbold.woff2') format('woff2'),
+         url('../fonts/irterafikbold.woff') format('woff'),
+         url('../fonts/irterafikbold.ttf') format('truetype'),
+         url('../fonts/irterafikbold.svg#irterafikbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'IRTitr';
+    src: url('../fonts/irtitrregular.eot');
+    src: url('../fonts/irtitrregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irtitrregular.woff2') format('woff2'),
+         url('../fonts/irtitrregular.woff') format('woff'),
+         url('../fonts/irtitrregular.ttf') format('truetype'),
+         url('../fonts/irtitrregular.svg#irtitrregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRYekan';
+    src: url('../fonts/iryekanregular.eot');
+    src: url('../fonts/iryekanregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/iryekanregular.woff2') format('woff2'),
+         url('../fonts/iryekanregular.woff') format('woff'),
+         url('../fonts/iryekanregular.ttf') format('truetype'),
+         url('../fonts/iryekanregular.svg#iryekanregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRYekan';
+    src: url('../fonts/iryekanbold.eot');
+    src: url('../fonts/iryekanbold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/iryekanbold.woff2') format('woff2'),
+         url('../fonts/iryekanbold.woff') format('woff'),
+         url('../fonts/iryekanbold.ttf') format('truetype'),
+         url('../fonts/iryekanbold.svg#iryekanbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRNazanin';
+    src: url('../fonts/irnazaninregular.eot');
+    src: url('../fonts/irnazaninregular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irnazaninregular.woff2') format('woff2'),
+         url('../fonts/irnazaninregular.woff') format('woff'),
+         url('../fonts/irnazaninregular.ttf') format('truetype'),
+         url('../fonts/irnazaninregular.svg#irnazaninregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRNazanin';
+    src: url('../fonts/irnazaninbold.eot');
+    src: url('../fonts/irnazaninbold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/irnazaninbold.woff2') format('woff2'),
+         url('../fonts/irnazaninbold.woff') format('woff'),
+         url('../fonts/irnazaninbold.ttf') format('truetype'),
+         url('../fonts/irnazaninbold.svg#irnazaninbold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
